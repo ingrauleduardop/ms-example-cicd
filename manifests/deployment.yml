@@ -1,0 +1,17 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: hellomicroservice-app
+  namespace: microservices-dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hellomicroservice 
+    spec:
+      containers:
+        - name: hellomicroservice-container 
+          image: /hellomicroservice
+          ports:
+          - containerPort: 8080
